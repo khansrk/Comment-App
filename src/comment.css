@@ -1,0 +1,13 @@
+.mypanel{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+@media (max-width:768px){
+  .mypanel{
+    width: 70%;
+  }
+}
