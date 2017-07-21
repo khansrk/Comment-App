@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Button} from 'react-bootstrap';
 import axios from 'axios';
-import RaisedButton from 'material-ui/RaisedButton';
-
 
 class Edit extends Component{
   constructor(props){
@@ -34,18 +31,13 @@ class Edit extends Component{
           if(this.state.edit){
             return(
             <div>
-            <textarea9 defaultValue={this.props.val}></textarea>
-              <TextField
-               ref={(ref)=>this.input=ref}
-               defaultValue = {this.props.val}
-               multiLine={true}
-               rows={5} /><br />
-            <RaisedButton label="Save" onClick={()=>this.save(this.props.id)} primary={true} />
+            <textarea ref={(ref)=>this.input=ref} defaultValue={this.props.val}></textarea>
+            <Button onClick={()=>this.save(this.props.id)}>Save</Button></div>
           )
       }
         else {
         return(
-          <RaisedButton label="Edit" onClick={this.onEdit} primary={true} />
+          <Button onClick = {this.onEdit}>Edit</Button>
         )
       }
   }

@@ -48,12 +48,12 @@ onDelete = (id) =>{
         <div className="text-center container mycont">
         <h1>Comment System</h1>
         {this.state.data.map((res) =>
-          <Panel className = "mypanel"><strong>Name:</strong>{' '}{res.name}<br/><strong>Message:</strong>{' '}{res.message}</Panel>
-          <Button onClick = {()=>this.onDelete(res.id)}>Delete</Button>
-          <MuiThemeProvider><Edit val = {res.message} id = {res.id} onget = {this.onHandle}/></MuiThemeProvider>
-          <Increment value = {res.likes} id = {res.id} onget = {this.onHandle}/>
+          <span><br/><Panel className = "mypanel"><strong>Name:</strong>{' '}{res.name}<br/><strong>Message:</strong>{' '}{res.message}</Panel>
+          <Button onClick = {()=>this.onDelete(res.id)}>Delete</Button>{' '}
+          <MuiThemeProvider><Edit val = {res.message} id = {res.id} onget = {this.onHandle}/></MuiThemeProvider>{' '}
+          <Increment value = {res.likes} id = {res.id} onget = {this.onHandle}/><br/></span>
         )}
-        <UserForm onget = {this.onHandle}/>
+        <UserForm onget = {this.onHandle}/><br/>
         </div>
       )
     }
